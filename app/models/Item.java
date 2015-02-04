@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,7 +9,9 @@ import javax.persistence.Table;
 @Table(name = "items")
 public class Item {
 
-    @Id public Long id;
+    @Id
+    @GeneratedValue
+    public Long id;
     public String name;
     public Double price;
 
@@ -18,6 +21,6 @@ public class Item {
         this.price = price;
     }
 
-    public Item(){}
-
+    public Item() {
+    }
 }

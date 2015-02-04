@@ -1,13 +1,8 @@
 package models;
 
 import play.db.jpa.JPA;
-import scala.concurrent.stm.Ref;
-import scala.concurrent.stm.japi.STM;
-
 import javax.persistence.EntityManager;
 import java.util.Collection;
-import java.util.SortedMap;
-import java.util.TreeMap;
 import java.util.function.Function;
 
 public interface Shop {
@@ -26,6 +21,7 @@ public interface Shop {
 
         private <A> A withTransaction(Function<EntityManager, A> f) {
             try {
+
                 return JPA.withTransaction(()->f.apply(JPA.em()));
             } catch (Throwable throwable) {
                 throw new RuntimeException(throwable);

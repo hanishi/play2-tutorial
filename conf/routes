@@ -9,6 +9,6 @@ GET           /                    controllers.Application.index()
 GET           /assets/*file        controllers.Assets.at(path="/public", file)
 GET           /items               controllers.Items.list
 POST          /items               controllers.Items.create
-GET           /items/:id<¥d+>      controllers.Items.details(id: Long)
+GET           /items/$id<\d+>      controllers.Items.details(id: Long)
 PUT           /items/:id           controllers.Items.update(id: Long)
 DELETE        /items/:id           controllers.Items.delete(id: Long)
